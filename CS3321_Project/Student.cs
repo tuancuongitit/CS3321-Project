@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,5 +37,13 @@ namespace CS3321_Project
             return null;
         }
 
+        public override ArrayList getAllCourseAsAList()
+        {
+            ArrayList returnArray = new ArrayList();
+            foreach (StudentCourse item in dictCourses.Values) {
+                returnArray.Add(item);
+            }
+            return returnArray;
+        }
     }
 }

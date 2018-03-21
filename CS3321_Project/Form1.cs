@@ -21,7 +21,6 @@ namespace CS3321_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            data.loadDatabase();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -29,6 +28,12 @@ namespace CS3321_Project
             if (data.checkUserLogin(txtUser.Text, txtPassword.Text))
             {
                 MessageBox.Show("Login Successfully");
+                frm_UserDetail frm = new frm_UserDetail();
+                frm.data = data;
+                frm.userID = txtUser.Text;
+                this.Hide();
+                frm.ShowDialog();
+                
             } else
             {
                 MessageBox.Show("Login Failed");

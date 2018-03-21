@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CS3321_Project
 {
-    class User
+    public abstract class User
     {
         private string userID, password, name, typeOfUser;
 
@@ -38,6 +39,7 @@ namespace CS3321_Project
             return this.typeOfUser;
         }
 
+        public abstract ArrayList getAllCourseAsAList();
         
     }
 }

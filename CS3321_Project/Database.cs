@@ -121,5 +121,16 @@ namespace CS3321_Project {
             }
         }
 
+        public User getUserInformation(string userID)
+        {
+            if (dictAccount.ContainsKey(userID))
+            {
+                return dictAccount[userID];
+            } else
+            {
+                return null;
+            }
+        }
+
     }
 }

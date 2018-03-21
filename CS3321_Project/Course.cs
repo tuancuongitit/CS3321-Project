@@ -48,6 +48,16 @@ namespace CS3321_Project
             return returnDict;
         }
 
+        public ArrayList getAllAssignmentsAsAList()
+        {
+            ArrayList returnArray = new ArrayList();
+            foreach (Assignment item in dictAssignment.Values)
+            {
+                returnArray.Add(item);
+            }
+            return returnArray;
+        }
+
         public Assignment getOneAssignment(string name)
         {
             if (dictAssignment.ContainsKey(name))

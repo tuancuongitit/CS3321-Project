@@ -51,6 +51,16 @@ namespace CS3321_Project
             }
         }
 
+        public override ArrayList getAllCourseAsAList()
+        {
+            ArrayList returnArray = new ArrayList();
+            foreach (ProfessorCourse item in dictCourses.Values)
+            {
+                returnArray.Add(item);
+            }
+            return returnArray;
+        }
+
         public ArrayList getAllStudentsOfACourse(string course, string IDorNAME)
         {
             ArrayList returnArr = new ArrayList();
