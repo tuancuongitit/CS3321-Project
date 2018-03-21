@@ -11,7 +11,7 @@ namespace CS3321_Project
     {
         private Dictionary<string, ProfessorCourse> dictCourses = new Dictionary<string, ProfessorCourse>();
 
-        public Professor(string userID, string password, string name, string type) : base(userID, password, name, "Professor")
+        public Professor(string userID, string password, string name, string type) : base(userID, password, name, type)
         {
         }
 

@@ -17,6 +17,7 @@ namespace CS3321_Project
             this.password = password;
             this.name = name;
             this.typeOfUser = type;
+            Console.WriteLine(type);
         }
 
         public string getName()

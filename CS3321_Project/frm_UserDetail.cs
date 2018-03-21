@@ -16,6 +16,7 @@ namespace CS3321_Project
         public Database data;
         public string userID;
         private User user;
+        private string userType;
         private ArrayList allCourses, allAssignments;
 
         public frm_UserDetail()
@@ -25,19 +26,30 @@ namespace CS3321_Project
 
         private void frm_UserDetail_Load(object sender, EventArgs e)
         {
-            if (userID != null)
-            {
-                user = data.getUserInformation(userID);
-                lblName.Text = user.getTypeOfUser() + ": " + user.getName();
-                lblStudentID.Text = "ID: " + user.getID();
-                allCourses = user.getAllCourseAsAList();
+            
+            //userType = user.getTypeOfUser();
+            user = data.getUserInformation(userID);
+            lblName.Text = user.getTypeOfUser() + ": " + user.getName();
+            lblStudentID.Text = "ID: " + user.getID();
+            allCourses = user.getAllCourseAsAList();
+            MessageBox.Show(userType);
 
+            if (userType.Equals("student", StringComparison.OrdinalIgnoreCase))
+            {
                 for (int i = 0; i < allCourses.Count; i++)
                 {
                     StudentCourse stu = (StudentCourse)allCourses[i];
                     lstCoursesList.Items.Add(stu.getCourseName());
                 }
 
+            } else
+            {
+                Console.WriteLine("Professor");
+                for (int i = 0; i < allCourses.Count; i++)
+                {
+                    ProfessorCourse stu = (ProfessorCourse)allCourses[i];
+                    lstCoursesList.Items.Add(stu.getCourseName());
+                }
             }
 
             

@@ -9,7 +9,7 @@ namespace CS3321_Project
 {
     class Student : User
     {
-        public Student(string userID, string password, string name, string type) : base(userID, password, name, "Student") {}
+        public Student(string userID, string password, string name, string type) : base(userID, password, name, type) {}
         private Dictionary<string, StudentCourse> dictCourses = new Dictionary<string, StudentCourse>();
 
         public void addCourse(StudentCourse course)

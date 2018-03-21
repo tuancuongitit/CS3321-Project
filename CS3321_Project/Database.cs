@@ -16,14 +16,14 @@ namespace CS3321_Project {
         public void loadDatabase()
         {
             //For English Class, Professor Jason, total Student = 5, total Assignments = 3
-            Professor pro1 = new Professor("2111", "999", "Jason", "Statham");
+            Professor pro1 = new Professor("2111", "999", "Jason Statham", "Professor");
             ProfessorCourse eng = new ProfessorCourse("English");
             ProfessorCourse chem = new ProfessorCourse("Chemistry");
             pro1.addCourse(eng);
             pro1.addCourse(chem);
 
             //Pro2
-            Professor pro2 = new Professor("2112", "999", "Henry", "Ford");
+            Professor pro2 = new Professor("2112", "999", "Henry Ford", "Professor");
             ProfessorCourse math = new ProfessorCourse("Math");
             ProfessorCourse biology = new ProfessorCourse("Biology");
             pro2.addCourse(biology);
@@ -32,11 +32,11 @@ namespace CS3321_Project {
             int totalStudent = 5;
             Student[] allStudents = new Student[totalStudent];
 
-            Student s1 = new Student("1111", "999", "Justin", "Bieber");
-            Student s2 = new Student("1112", "999", "Charlie", "Puth");
-            Student s3 = new Student("1113", "999", "Selena", "Gomez");
-            Student s4 = new Student("1114", "999", "Taylor", "Swift");
-            Student s5 = new Student("1115", "999", "Bruno", "Mars");
+            Student s1 = new Student("1111", "999", "Justin Bieber", "Student");
+            Student s2 = new Student("1112", "999", "Charlie Puth", "Student");
+            Student s3 = new Student("1113", "999", "Selena Gomez", "Student");
+            Student s4 = new Student("1114", "999", "Taylor Swift", "Student");
+            Student s5 = new Student("1115", "999", "Bruno Mars", "Student");
 
             allStudents[0] = s1;
             allStudents[1] = s2;
