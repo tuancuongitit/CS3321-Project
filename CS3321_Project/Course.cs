@@ -24,17 +24,7 @@ namespace CS3321_Project
 
         public void addAssignment(Assignment assign)
         {
-            dictAssignment.Add(assign.getName(), assign);
-        }
 
-        public bool updateGrade(String name, double grade)
-        {
-            if (dictAssignment.ContainsKey(name))
-            {
-                dictAssignment[name].setGrade(grade);
-                return true;
-            }
-            return false;
         }
 
         public Dictionary<string, Assignment> getAllAssignment()

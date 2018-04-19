@@ -3,51 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CS3321_Project
 {
-    class Assignment
+    public class Assignment
     {
+        [JsonProperty("assignments")]
+        public Dictionary<string, Info> allAssignments { get; set; }
+    }
 
-        private string assignmentName;
-        private double assignmentGrade;
-
-        public Assignment(string name)
+    public class Info
+    {
+        [JsonProperty("id")]
+        public int id { get; set; }
+        [JsonProperty("name")]
+        public string name { get; set; }
+        [JsonProperty("grade")]
+        public float grade { get; set; }
+        
+        public Info(int newid, string newname, float newgrade)
         {
-            this.setAssignment(name, -1);
-        }
-
-        public Assignment (string name, double grade)
-        {
-            this.setAssignment(name, grade);
-        }
-
-        public void setAssignment(string name, double grade)
-        {
-            this.assignmentName = name;
-            this.assignmentGrade = grade;
-        }
-
-        public string getName()
-        {
-            return this.assignmentName;
-        }
-
-        public double getGrade()
-        {
-            return this.assignmentGrade;
-        }
-
-        public void setGrade(double grade)
-        {
-            this.assignmentGrade = grade;
-        }
-
-        public override string ToString()
-        {
-            return "Assignment: " + getName() + " - Grade: " + getGrade();
+            this.id = newid;
+            this.name = newname;
+            this.grade = newgrade;
         }
     }
+
+
 
     
 }

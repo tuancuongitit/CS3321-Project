@@ -27,48 +27,12 @@ namespace CS3321_Project
         private void frm_UserDetail_Load(object sender, EventArgs e)
         {
             
-            //userType = user.getTypeOfUser();
-            user = data.getUserInformation(userID);
-            lblName.Text = user.getTypeOfUser() + ": " + user.getName();
-            lblStudentID.Text = "ID: " + user.getID();
-            allCourses = user.getAllCourseAsAList();
-            MessageBox.Show(userType);
-
-            if (userType.Equals("student", StringComparison.OrdinalIgnoreCase))
-            {
-                for (int i = 0; i < allCourses.Count; i++)
-                {
-                    StudentCourse stu = (StudentCourse)allCourses[i];
-                    lstCoursesList.Items.Add(stu.getCourseName());
-                }
-
-            } else
-            {
-                Console.WriteLine("Professor");
-                for (int i = 0; i < allCourses.Count; i++)
-                {
-                    ProfessorCourse stu = (ProfessorCourse)allCourses[i];
-                    lstCoursesList.Items.Add(stu.getCourseName());
-                }
-            }
-
             
         }
 
         private void lstCoursesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lstAssignments.Items.Clear();
-            lstGrades.Items.Clear();
-            StudentCourse selectedCourse = (StudentCourse)allCourses[lstCoursesList.SelectedIndex];
-            allAssignments = selectedCourse.getAllAssignmentsAsAList();
-            lblProfessor.Text = "Professor: " + selectedCourse.getProfessorName();
-
-            for (int i = 0; i < allAssignments.Count; i++)
-            {
-                Assignment assign = (Assignment)allAssignments[i];
-                lstAssignments.Items.Add(assign.getName() + "\t\t");
-                lstGrades.Items.Add(assign.getGrade());
-            }
+            
 
         }
     }

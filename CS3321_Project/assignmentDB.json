@@ -1,0 +1,14 @@
+{
+  "assignments": {
+    "1231": {
+      "id": 1231,
+      "name": "Quiz 1",
+      "grade": 95
+    },
+    "1221": {
+      "id": 1221,
+      "name": "Quiz 2",
+      "grade": 95
+    }
+  }
+}

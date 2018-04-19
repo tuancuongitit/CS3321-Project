@@ -4,20 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using Newtonsoft.Json.Linq;
 
 namespace CS3321_Project
 {
-    public abstract class User
+    public class courseInfo
     {
-        private string userID, password, name, typeOfUser;
+        private int id;
+        private List<int> assignmentIDs;
+    }
 
-        public User(string userID, string password, string name, string type) //constructor 
+    public class User 
+    {
+        private int id;
+        private string name, major, userType, username, password;
+        private List<courseInfo> courses;
+
+        public User(string json)
         {
-            this.userID = userID;
-            this.password = password;
-            this.name = name;
-            this.typeOfUser = type;
-            Console.WriteLine(type);
+            JObject jObject = JObject.Parse(json);
+            JToken jUser = jObject["users"];
+            id = (int)jUser["id"];
+            name = (string)jUser["name"];
+            major = (string)jUser["major"];
+            userType = (string)jUser["usertype"];
+            username = (string)jUser["username"];
+            password = (string)jUser["password"];
         }
 
         public string getName()
@@ -30,17 +42,17 @@ namespace CS3321_Project
             return this.password;
         }
 
-        public string getID()
+        public int getID()
         {
-            return this.userID;
+            return this.id;
         }
 
         public string getTypeOfUser()
         {
-            return this.typeOfUser;
+            return this.userType;
         }
 
-        public abstract ArrayList getAllCourseAsAList();
+        //public abstract ArrayList getAllCourseAsAList();
         
     }
 }
