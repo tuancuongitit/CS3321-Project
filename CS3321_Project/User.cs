@@ -27,6 +27,11 @@ namespace CS3321_Project
             } else {  return false; }
         }
 
+        public UserInfo getInfoOfAUser(string username)
+        {
+            return allUsers[username];
+        }
+
     }
 
     public class UserInfo
@@ -45,12 +50,17 @@ namespace CS3321_Project
         public string password { get; set; }
         [JsonProperty("courses")]
         public Dictionary<string, enrolledCourseInfo> allEnrolledCourses { get; set; }
+
+        public static explicit operator UserInfo(CourseInfo v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class enrolledCourseInfo
     {
         [JsonProperty("id")]
-        public int id { get; set; }
+        public string id { get; set; }
         [JsonProperty("AssignmentID")]
         public ArrayList assignmentIDList { get; set; }
     }

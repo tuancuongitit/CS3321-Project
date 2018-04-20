@@ -28,96 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.lstAssignments = new System.Windows.Forms.ListBox();
-            this.lblProfessor = new System.Windows.Forms.Label();
-            this.lstGrades = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMajor = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblGPA = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalCourses = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblStudentID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstCoursesList = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCourseType = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblCourseID = new System.Windows.Forms.Label();
+            this.lblProfessor = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblCourseName = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lstAssignmentList = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(301, 206);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Assignments";
-            // 
-            // lstAssignments
-            // 
-            this.lstAssignments.FormattingEnabled = true;
-            this.lstAssignments.ItemHeight = 19;
-            this.lstAssignments.Location = new System.Drawing.Point(304, 225);
-            this.lstAssignments.Name = "lstAssignments";
-            this.lstAssignments.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstAssignments.Size = new System.Drawing.Size(179, 175);
-            this.lstAssignments.TabIndex = 4;
-            // 
-            // lblProfessor
-            // 
-            this.lblProfessor.AutoSize = true;
-            this.lblProfessor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfessor.Location = new System.Drawing.Point(301, 188);
-            this.lblProfessor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProfessor.Name = "lblProfessor";
-            this.lblProfessor.Size = new System.Drawing.Size(67, 16);
-            this.lblProfessor.TabIndex = 6;
-            this.lblProfessor.Text = "Professor:";
-            // 
-            // lstGrades
-            // 
-            this.lstGrades.FormattingEnabled = true;
-            this.lstGrades.ItemHeight = 19;
-            this.lstGrades.Location = new System.Drawing.Point(482, 225);
-            this.lstGrades.Name = "lstGrades";
-            this.lstGrades.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lstGrades.Size = new System.Drawing.Size(64, 175);
-            this.lstGrades.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(479, 206);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Grades";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lblMajor);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lblGPA);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblTotalCourses);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblStudentID);
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 149);
+            this.groupBox1.Size = new System.Drawing.Size(241, 119);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profile";
+            // 
+            // lblMajor
+            // 
+            this.lblMajor.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMajor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblMajor.Location = new System.Drawing.Point(91, 93);
+            this.lblMajor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMajor.Name = "lblMajor";
+            this.lblMajor.Size = new System.Drawing.Size(140, 19);
+            this.lblMajor.TabIndex = 9;
+            this.lblMajor.Text = "Computer Science";
+            this.lblMajor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(26, 92);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 18);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Major:";
+            // 
+            // lblGPA
+            // 
+            this.lblGPA.AutoSize = true;
+            this.lblGPA.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGPA.Location = new System.Drawing.Point(136, 69);
+            this.lblGPA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGPA.Name = "lblGPA";
+            this.lblGPA.Size = new System.Drawing.Size(32, 19);
+            this.lblGPA.TabIndex = 7;
+            this.lblGPA.Text = "4.0";
+            this.lblGPA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(26, 69);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 18);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "GPA:";
+            // 
+            // lblTotalCourses
+            // 
+            this.lblTotalCourses.AutoSize = true;
+            this.lblTotalCourses.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCourses.Location = new System.Drawing.Point(136, 45);
+            this.lblTotalCourses.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCourses.Name = "lblTotalCourses";
+            this.lblTotalCourses.Size = new System.Drawing.Size(76, 19);
+            this.lblTotalCourses.TabIndex = 5;
+            this.lblTotalCourses.Text = "4 courses";
+            this.lblTotalCourses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 46);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Taking: ";
             // 
             // lblStudentID
             // 
@@ -141,80 +163,15 @@
             this.lblName.Size = new System.Drawing.Size(111, 19);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Cuong Pham";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Taking: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(136, 51);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 19);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "4 courses";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(136, 75);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 19);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "4.0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 75);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 18);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "GPA:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 119);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(136, 19);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Computer Science";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(26, 98);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 18);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Major:";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lstCoursesList);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 167);
+            this.groupBox2.Location = new System.Drawing.Point(12, 137);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(241, 228);
+            this.groupBox2.Size = new System.Drawing.Size(241, 181);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "My Courses";
@@ -225,52 +182,160 @@
             this.lstCoursesList.ItemHeight = 16;
             this.lstCoursesList.Location = new System.Drawing.Point(11, 21);
             this.lstCoursesList.Name = "lstCoursesList";
-            this.lstCoursesList.Size = new System.Drawing.Size(220, 196);
+            this.lstCoursesList.Size = new System.Drawing.Size(220, 148);
             this.lstCoursesList.TabIndex = 3;
+            this.lstCoursesList.SelectedIndexChanged += new System.EventHandler(this.lstCoursesList_SelectedIndexChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblCourseType);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.lblCourseID);
+            this.groupBox3.Controls.Add(this.lblProfessor);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.lblCourseName);
+            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(263, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(268, 119);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Course Information";
+            // 
+            // lblCourseType
+            // 
+            this.lblCourseType.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourseType.Location = new System.Drawing.Point(117, 78);
+            this.lblCourseType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCourseType.Name = "lblCourseType";
+            this.lblCourseType.Size = new System.Drawing.Size(120, 18);
+            this.lblCourseType.TabIndex = 10;
+            this.lblCourseType.Text = "Regular";
+            this.lblCourseType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 79);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 18);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Type:";
+            // 
+            // lblCourseID
+            // 
+            this.lblCourseID.AutoSize = true;
+            this.lblCourseID.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourseID.Location = new System.Drawing.Point(196, 19);
+            this.lblCourseID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCourseID.Name = "lblCourseID";
+            this.lblCourseID.Size = new System.Drawing.Size(65, 18);
+            this.lblCourseID.TabIndex = 8;
+            this.lblCourseID.Text = "CS_3306";
+            this.lblCourseID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblProfessor
+            // 
+            this.lblProfessor.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfessor.Location = new System.Drawing.Point(117, 54);
+            this.lblProfessor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProfessor.Name = "lblProfessor";
+            this.lblProfessor.Size = new System.Drawing.Size(144, 18);
+            this.lblProfessor.TabIndex = 7;
+            this.lblProfessor.Text = "Benjamin Soibam";
+            this.lblProfessor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(23, 55);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 18);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Professor:";
+            // 
+            // lblCourseName
+            // 
+            this.lblCourseName.AutoSize = true;
+            this.lblCourseName.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourseName.Location = new System.Drawing.Point(7, 19);
+            this.lblCourseName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCourseName.Name = "lblCourseName";
+            this.lblCourseName.Size = new System.Drawing.Size(170, 18);
+            this.lblCourseName.TabIndex = 3;
+            this.lblCourseName.Text = "Software Engineering";
+            this.lblCourseName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lstAssignmentList);
+            this.groupBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(263, 137);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(268, 181);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "My Assignent";
+            // 
+            // lstAssignmentList
+            // 
+            this.lstAssignmentList.FormattingEnabled = true;
+            this.lstAssignmentList.ItemHeight = 16;
+            this.lstAssignmentList.Location = new System.Drawing.Point(11, 21);
+            this.lstAssignmentList.Name = "lstAssignmentList";
+            this.lstAssignmentList.Size = new System.Drawing.Size(250, 148);
+            this.lstAssignmentList.TabIndex = 3;
             // 
             // frm_UserDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 407);
+            this.ClientSize = new System.Drawing.Size(545, 330);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lstGrades);
-            this.Controls.Add(this.lblProfessor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lstAssignments);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frm_UserDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Detail";
+            this.Text = "User Information";
             this.Load += new System.EventHandler(this.frm_UserDetail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lstAssignments;
-        private System.Windows.Forms.Label lblProfessor;
-        private System.Windows.Forms.ListBox lstGrades;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblMajor;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblGPA;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotalCourses;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblStudentID;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lstCoursesList;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblCourseName;
+        private System.Windows.Forms.Label lblCourseID;
+        private System.Windows.Forms.Label lblProfessor;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblCourseType;
+        public System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ListBox lstAssignmentList;
     }
 }

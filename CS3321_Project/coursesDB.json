@@ -1,0 +1,28 @@
+{
+  "courses": {
+    "ATRS_1301": {
+      "course_id": "AT_1301",
+      "name": "Intro To Arts",
+      "professor": "David Autcher",
+      "type": "Online",
+      "students": {
+        "111": {
+          "studentID": 111,
+          "AssignmentID": [ 111, 222, 333 ]
+        }
+      }
+    },
+    "CS_3306": {
+      "course_id": "CS_3306",
+      "name": "Theory Of Computation",
+      "professor": "Benjamin Soibam",
+      "type": "Face to Face",
+      "students": {
+        "111": {
+          "studentID": 111,
+          "AssignmentID": [ 111, 222, 333 ]
+        }
+      }
+    }
+  }
+}

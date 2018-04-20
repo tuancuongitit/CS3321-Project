@@ -8,12 +8,12 @@
       "username": "jb",
       "password": "999",
       "courses": {
-        "1": {
-          "id": 1,
+        "ATRS_1301": {
+          "id": "ATRS_1301",
           "AssignmentID": [ 1, 2, 3, 4, 5 ]
         },
-        "2": {
-          "id": 2,
+        "CS_3306": {
+          "id": "CS_3306",
           "AssignmentID": [ 6 , 7 ]
         }
       }

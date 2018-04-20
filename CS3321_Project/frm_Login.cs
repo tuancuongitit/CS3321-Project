@@ -31,6 +31,7 @@ namespace CS3321_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             load_DB_in_jSonFile();
         }
 
@@ -48,10 +49,13 @@ namespace CS3321_Project
         {
             if (allUsers.userAuth(txtUser.Text, txtPassword.Text))
             {
-                Console.WriteLine("Logged In Successfully");
+                MessageBox.Show(@"Login Successfully");
+                frm_UserDetail detail = new frm_UserDetail(txtUser.Text, allUsers, allCourses);
+                this.Hide();
+                detail.ShowDialog();
             } else
             {
-                Console.WriteLine("Failed");
+                MessageBox.Show(@"Please try again!");
             }
         }
     }

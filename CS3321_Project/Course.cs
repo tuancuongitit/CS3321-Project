@@ -9,16 +9,21 @@ using Newtonsoft.Json;
 
 namespace CS3321_Project
 {
-    class Course
+    public class Course
     {
         [JsonProperty("courses")]
-        public Dictionary<string, AssignmentInfo> allCourses { get; set; }
+        public Dictionary<string, CourseInfo> allCourses { get; set; }
+
+        public CourseInfo getInfoOfACourse(string course_id)
+        {
+            return allCourses[course_id];
+        }
     }
 
     public class CourseInfo
     {
         [JsonProperty("course_id")]
-        public int id { get; set; }
+        public string id { get; set; }
         [JsonProperty("name")]
         public string name { get; set; }
         [JsonProperty("professor")]
