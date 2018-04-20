@@ -10,10 +10,10 @@ namespace CS3321_Project
     public class Assignment
     {
         [JsonProperty("assignments")]
-        public Dictionary<string, Info> allAssignments { get; set; }
+        public Dictionary<string, AssignmentInfo> allAssignments { get; set; }
     }
 
-    public class Info
+    public class AssignmentInfo
     {
         [JsonProperty("id")]
         public int id { get; set; }
@@ -22,7 +22,7 @@ namespace CS3321_Project
         [JsonProperty("grade")]
         public float grade { get; set; }
         
-        public Info(int newid, string newname, float newgrade)
+        public AssignmentInfo(int newid, string newname, float newgrade)
         {
             this.id = newid;
             this.name = newname;

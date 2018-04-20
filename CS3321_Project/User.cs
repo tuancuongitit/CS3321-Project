@@ -5,54 +5,53 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace CS3321_Project
-{
-    public class courseInfo
-    {
-        private int id;
-        private List<int> assignmentIDs;
-    }
+{    
 
     public class User 
     {
-        private int id;
-        private string name, major, userType, username, password;
-        private List<courseInfo> courses;
+        [JsonProperty("users")]
+        public Dictionary<string, UserInfo> allUsers { get; set; }
 
-        public User(string json)
+        public bool userAuth(string username, string password)
         {
-            JObject jObject = JObject.Parse(json);
-            JToken jUser = jObject["users"];
-            id = (int)jUser["id"];
-            name = (string)jUser["name"];
-            major = (string)jUser["major"];
-            userType = (string)jUser["usertype"];
-            username = (string)jUser["username"];
-            password = (string)jUser["password"];
+            if (allUsers.ContainsKey(username))
+            {
+                if (allUsers[username].password.Equals(password, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                } else { return false; }
+                
+            } else {  return false; }
         }
 
-        public string getName()
-        {
-            return this.name;
-        }
+    }
 
-        public string getPassword()
-        {
-            return this.password;
-        }
+    public class UserInfo
+    {
+        [JsonProperty("id")]
+        public int id { get; set; }
+        [JsonProperty("name")]
+        public string name { get; set; }
+        [JsonProperty("major")]
+        public string major { get; set; }
+        [JsonProperty("userType")]
+        public string userType { get; set; }
+        [JsonProperty("username")]
+        public string username { get; set; }
+        [JsonProperty("password")]
+        public string password { get; set; }
+        [JsonProperty("courses")]
+        public Dictionary<string, enrolledCourseInfo> allEnrolledCourses { get; set; }
+    }
 
-        public int getID()
-        {
-            return this.id;
-        }
-
-        public string getTypeOfUser()
-        {
-            return this.userType;
-        }
-
-        //public abstract ArrayList getAllCourseAsAList();
-        
+    public class enrolledCourseInfo
+    {
+        [JsonProperty("id")]
+        public int id { get; set; }
+        [JsonProperty("AssignmentID")]
+        public ArrayList assignmentIDList { get; set; }
     }
 }

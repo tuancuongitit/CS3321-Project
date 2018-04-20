@@ -20,10 +20,13 @@ namespace CS3321_Project
     public partial class frm_Main : Form
     {
 
+        private User allUsers;
+        private Course allCourses;
+        private Assignment allAssignments;
+
         public frm_Main()
         {
             InitializeComponent();
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,25 +36,23 @@ namespace CS3321_Project
 
         private void load_DB_in_jSonFile()
         {
-            var json = File.ReadAllText("assignmentDB.json");
-            Assignment all = JsonConvert.DeserializeObject<Assignment>(json);
-            all.allAssignments.Add("1248", new Info(1248, "Test", 90));
-            foreach (KeyValuePair<string, Info> item in all.allAssignments)
-            {
-                Console.WriteLine(item.Key);
-                Console.WriteLine(item.Value.name);
-            }
-
-            string output = JsonConvert.SerializeObject(all);
-            Console.WriteLine(output);
-              
-
-
+            var json = File.ReadAllText("usersDB.json");
+            allUsers = JsonConvert.DeserializeObject<User>(json);
+            json = File.ReadAllText("coursesDB.json");
+            allCourses = JsonConvert.DeserializeObject<Course>(json);
+            json = File.ReadAllText("assignmentDB.json");
+            allAssignments = JsonConvert.DeserializeObject<Assignment>(json);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            load_DB_in_jSonFile();
+            if (allUsers.userAuth(txtUser.Text, txtPassword.Text))
+            {
+                Console.WriteLine("Logged In Successfully");
+            } else
+            {
+                Console.WriteLine("Failed");
+            }
         }
     }
 }

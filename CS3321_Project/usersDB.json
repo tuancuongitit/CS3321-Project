@@ -1,21 +1,51 @@
 {
   "users": {
-      "cpham": {
-         "id":111,
-         "name":"Cuong Pham",
-         "major":"Computer Science",
-         "userType":"Student",
-         "username":"cpham",
-         "password":"111",
-         "courses": {
-            "222" : {
-               "id":222,
-               "AssignmentID": {
-                  [1231,
-                  1221]
-               }
-            }
-         }
+    "jb": {
+      "id": 1111,
+      "name": "Justin Bieber",
+      "major": "Computer Science",
+      "userType": "Student",
+      "username": "jb",
+      "password": "999",
+      "courses": {
+        "1": {
+          "id": 1,
+          "AssignmentID": [ 1, 2, 3, 4, 5 ]
+        },
+        "2": {
+          "id": 2,
+          "AssignmentID": [ 6 , 7 ]
+        }
       }
+    },
+    "cp": {
+      "id": 1112,
+      "name": "Charlie Puth",
+      "major": "Business",
+      "userType": "Student",
+      "username": "cp",
+      "password": "999",
+      "courses": {
+        "1": {
+          "id": 1,
+          "AssignmentID": [ 8, 9, 10, 11, 12 ]
+        }
+      }
+    },
+    "js": {
+      "id": 2111,
+      "name": "Jason Statham",
+      "major": "Computer Science",
+      "userType": "Professor",
+      "username": "js",
+      "password": "999",
+      "courses": {
+        "1": {
+          "id": 1,
+          "AssignmentID": []
+        }
+      }
+    }
+
    }
 }
