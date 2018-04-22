@@ -50,11 +50,6 @@ namespace CS3321_Project
         public string password { get; set; }
         [JsonProperty("courses")]
         public Dictionary<string, enrolledCourseInfo> allEnrolledCourses { get; set; }
-
-        public static explicit operator UserInfo(CourseInfo v)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class enrolledCourseInfo

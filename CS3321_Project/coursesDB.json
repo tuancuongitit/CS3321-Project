@@ -1,14 +1,14 @@
 {
   "courses": {
-    "ATRS_1301": {
+    "AT_1301": {
       "course_id": "AT_1301",
       "name": "Intro To Arts",
       "professor": "David Autcher",
       "type": "Online",
       "students": {
         "111": {
-          "studentID": 111,
-          "AssignmentID": [ 111, 222, 333 ]
+          "studentID": "111",
+          "AssignmentID": [ "111", "222", "333" ]
         }
       }
     },
@@ -19,8 +19,8 @@
       "type": "Face to Face",
       "students": {
         "111": {
-          "studentID": 111,
-          "AssignmentID": [ 111, 222, 333 ]
+          "studentID": "111",
+          "AssignmentID": [ "111", "222", "333" ]
         }
       }
     }

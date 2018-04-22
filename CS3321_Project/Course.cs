@@ -37,7 +37,7 @@ namespace CS3321_Project
     public class enrolledStudentInfo
     {
         [JsonProperty("studentID")]
-        public int id { get; set; }
+        public string id { get; set; }
         [JsonProperty("AssignmentID")]
         public ArrayList assignmentIDList { get; set; }
     }

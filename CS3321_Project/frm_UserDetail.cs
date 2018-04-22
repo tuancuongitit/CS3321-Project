@@ -15,20 +15,24 @@ namespace CS3321_Project
     {
         private User allUsers;
         private Course allCourses;
+        private Assignment allAssignments;
         private string username;
         private List<CourseInfo> allCourseInfo = new List<CourseInfo>();
+        private UserInfo thisUserInfo;
 
         public frm_UserDetail()
         {
             InitializeComponent();
         }
 
-        public frm_UserDetail(string username, User allusers, Course allCourse)
+        public frm_UserDetail(string username, User allusers, Course allCourse, Assignment allAssignments)
         {
             InitializeComponent();
+            this.Width = 279;
             this.username = username;
             this.allUsers = allusers;
             this.allCourses = allCourse;
+            this.allAssignments = allAssignments;
         }
 
         private void frm_UserDetail_Load(object sender, EventArgs e)
@@ -40,6 +44,7 @@ namespace CS3321_Project
         private void loadUserInfo()
         {
             UserInfo user = allUsers.getInfoOfAUser(username);
+            thisUserInfo = user;
             lblName.Text = user.name;
             lblStudentID.Text = "ID: " + user.id;
             lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
@@ -63,10 +68,36 @@ namespace CS3321_Project
         private void lstCoursesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.Width = 557;
-             lblCourseName.Text = allCourseInfo[lstCoursesList.SelectedIndex].name;
-             lblCourseID.Text = allCourseInfo[lstCoursesList.SelectedIndex].id;
-             lblProfessor.Text = allCourseInfo[lstCoursesList.SelectedIndex].professor;
-             lblCourseType.Text = allCourseInfo[lstCoursesList.SelectedIndex].type;
+            lblCourseName.Text = allCourseInfo[lstCoursesList.SelectedIndex].name;
+            lblCourseID.Text = allCourseInfo[lstCoursesList.SelectedIndex].id;
+            lblProfessor.Text = allCourseInfo[lstCoursesList.SelectedIndex].professor;
+            lblCourseType.Text = allCourseInfo[lstCoursesList.SelectedIndex].type;
+
+            loadAssignments();
+        }
+
+        private void loadAssignments()
+        {
+            int i = 0;
+
+            enrolledCourseInfo enrolled = thisUserInfo.allEnrolledCourses[allCourseInfo[lstCoursesList.SelectedIndex].id];              
+
+            foreach (string id in enrolled.assignmentIDList)
+            {
+                AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(id);
+                lstAssignmentList.Items.Add(assignment.name);
+                lstGrade.Items.Add(assignment.grade);
+            }
+        }
+
+        private void lstAssignmentList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstGrade.SelectedIndex = lstAssignmentList.SelectedIndex;
+        }
+
+        private void lstGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstAssignmentList.SelectedIndex = lstGrade.SelectedIndex;
         }
     }
 }

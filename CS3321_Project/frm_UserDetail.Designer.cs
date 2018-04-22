@@ -47,6 +47,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblCourseName = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lstGrade = new System.Windows.Forms.ListBox();
             this.lstAssignmentList = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -272,6 +275,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.lstGrade);
             this.groupBox4.Controls.Add(this.lstAssignmentList);
             this.groupBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(263, 137);
@@ -281,20 +287,54 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "My Assignent";
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(196, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 18);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Grade";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Name";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lstGrade
+            // 
+            this.lstGrade.FormattingEnabled = true;
+            this.lstGrade.ItemHeight = 16;
+            this.lstGrade.Location = new System.Drawing.Point(211, 37);
+            this.lstGrade.Name = "lstGrade";
+            this.lstGrade.Size = new System.Drawing.Size(50, 132);
+            this.lstGrade.TabIndex = 4;
+            this.lstGrade.SelectedIndexChanged += new System.EventHandler(this.lstGrade_SelectedIndexChanged);
+            // 
             // lstAssignmentList
             // 
             this.lstAssignmentList.FormattingEnabled = true;
             this.lstAssignmentList.ItemHeight = 16;
-            this.lstAssignmentList.Location = new System.Drawing.Point(11, 21);
+            this.lstAssignmentList.Location = new System.Drawing.Point(11, 37);
             this.lstAssignmentList.Name = "lstAssignmentList";
-            this.lstAssignmentList.Size = new System.Drawing.Size(250, 148);
+            this.lstAssignmentList.Size = new System.Drawing.Size(203, 132);
             this.lstAssignmentList.TabIndex = 3;
+            this.lstAssignmentList.SelectedIndexChanged += new System.EventHandler(this.lstAssignmentList_SelectedIndexChanged);
             // 
             // frm_UserDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 330);
+            this.ClientSize = new System.Drawing.Size(542, 327);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -337,5 +377,8 @@
         public System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListBox lstAssignmentList;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lstGrade;
     }
 }
