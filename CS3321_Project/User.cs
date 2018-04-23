@@ -27,9 +27,27 @@ namespace CS3321_Project
             } else {  return false; }
         }
 
-        public UserInfo getInfoOfAUser(string username)
+        public UserInfo getInfoOfAUser(string auth, bool UsingID)
         {
-            return allUsers[username];
+            if (UsingID)
+            {
+                foreach (var pair in allUsers)
+                {
+                    if (pair.Value.id.Equals(auth))
+                    {
+                        return allUsers[pair.Key];
+                    }
+                }
+                return null;
+            } else
+            {
+                return allUsers[auth];
+            }
+        }
+
+        public string getTypeOfAUser(string username)
+        {
+            return allUsers[username].userType;
         }
 
     }
@@ -37,7 +55,7 @@ namespace CS3321_Project
     public class UserInfo
     {
         [JsonProperty("id")]
-        public int id { get; set; }
+        public string id { get; set; }
         [JsonProperty("name")]
         public string name { get; set; }
         [JsonProperty("major")]

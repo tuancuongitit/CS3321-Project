@@ -1,14 +1,34 @@
 {
   "assignments": {
-    "111": {
-      "id": "111",
+    "1": {
+      "id": "1",
       "name": "Quiz 1",
       "grade": 95
     },
-    "222": {
-      "id": "222",
+    "2": {
+      "id": "2",
       "name": "Quiz 2",
       "grade": 89
+    },
+    "3": {
+      "id": "3",
+      "name": "Quiz 1",
+      "grade": 64
+    },
+    "4": {
+      "id": "4",
+      "name": "Quiz 2",
+      "grade": 77
+    },
+    "5": {
+      "id": "5",
+      "name": "Quiz 1",
+      "grade": -1
+    },
+    "6": {
+      "id": "6",
+      "name": "Quiz 2",
+      "grade": -1
     }
   }
 }

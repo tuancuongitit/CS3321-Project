@@ -25,9 +25,9 @@ namespace CS3321_Project
         [JsonProperty("name")]
         public string name { get; set; }
         [JsonProperty("grade")]
-        public float grade { get; set; }
+        public long grade { get; set; }
         
-        public AssignmentInfo(string newid, string newname, float newgrade)
+        public AssignmentInfo(string newid, string newname, long newgrade)
         {
             this.id = newid;
             this.name = newname;

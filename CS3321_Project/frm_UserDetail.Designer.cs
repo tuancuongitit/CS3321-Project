@@ -85,13 +85,13 @@
             this.lblMajor.Size = new System.Drawing.Size(140, 19);
             this.lblMajor.TabIndex = 9;
             this.lblMajor.Text = "Computer Science";
-            this.lblMajor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMajor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(26, 92);
+            this.label9.Location = new System.Drawing.Point(8, 93);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 18);
@@ -102,19 +102,19 @@
             // 
             this.lblGPA.AutoSize = true;
             this.lblGPA.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGPA.Location = new System.Drawing.Point(136, 69);
+            this.lblGPA.Location = new System.Drawing.Point(199, 68);
             this.lblGPA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGPA.Name = "lblGPA";
             this.lblGPA.Size = new System.Drawing.Size(32, 19);
             this.lblGPA.TabIndex = 7;
             this.lblGPA.Text = "4.0";
-            this.lblGPA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGPA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 69);
+            this.label7.Location = new System.Drawing.Point(8, 69);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 18);
@@ -125,19 +125,19 @@
             // 
             this.lblTotalCourses.AutoSize = true;
             this.lblTotalCourses.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCourses.Location = new System.Drawing.Point(136, 45);
+            this.lblTotalCourses.Location = new System.Drawing.Point(155, 46);
             this.lblTotalCourses.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalCourses.Name = "lblTotalCourses";
             this.lblTotalCourses.Size = new System.Drawing.Size(76, 19);
             this.lblTotalCourses.TabIndex = 5;
             this.lblTotalCourses.Text = "4 courses";
-            this.lblTotalCourses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalCourses.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 46);
+            this.label3.Location = new System.Drawing.Point(8, 46);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 18);

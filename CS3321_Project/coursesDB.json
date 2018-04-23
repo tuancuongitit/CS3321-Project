@@ -18,9 +18,13 @@
       "professor": "Benjamin Soibam",
       "type": "Face to Face",
       "students": {
-        "111": {
-          "studentID": "111",
-          "AssignmentID": [ "111", "222", "333" ]
+        "1111": {
+          "studentID": "1111",
+          "AssignmentID": [ "1", "2" ]
+        },
+        "1112": {
+          "studentID": "1112",
+          "AssignmentID": [ "3", "4" ]
         }
       }
     }

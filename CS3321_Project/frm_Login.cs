@@ -50,9 +50,17 @@ namespace CS3321_Project
             if (allUsers.userAuth(txtUser.Text, txtPassword.Text))
             {
                 MessageBox.Show(@"Login Successfully");
-                frm_UserDetail detail = new frm_UserDetail(txtUser.Text, allUsers, allCourses, allAssignments);
-                this.Hide();
-                detail.ShowDialog();
+                if (allUsers.getInfoOfAUser(txtUser.Text, false).userType.Equals("Student"))
+                {
+                    frm_UserDetail detail = new frm_UserDetail(txtUser.Text, allUsers, allCourses, allAssignments);
+                    this.Hide();
+                    detail.ShowDialog();
+                } else
+                {
+                    frmProfessorDetail detail = new frmProfessorDetail(txtUser.Text, allUsers, allCourses, allAssignments);
+                    this.Hide();
+                    detail.ShowDialog();
+                }
             } else
             {
                 MessageBox.Show(@"Please try again!");

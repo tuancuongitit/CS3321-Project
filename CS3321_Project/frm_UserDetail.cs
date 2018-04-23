@@ -43,7 +43,7 @@ namespace CS3321_Project
 
         private void loadUserInfo()
         {
-            UserInfo user = allUsers.getInfoOfAUser(username);
+            UserInfo user = allUsers.getInfoOfAUser(username, false);
             thisUserInfo = user;
             lblName.Text = user.name;
             lblStudentID.Text = "ID: " + user.id;
@@ -78,8 +78,6 @@ namespace CS3321_Project
 
         private void loadAssignments()
         {
-            int i = 0;
-
             enrolledCourseInfo enrolled = thisUserInfo.allEnrolledCourses[allCourseInfo[lstCoursesList.SelectedIndex].id];              
 
             foreach (string id in enrolled.assignmentIDList)
