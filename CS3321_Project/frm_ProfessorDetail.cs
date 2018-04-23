@@ -79,10 +79,9 @@ namespace CS3321_Project
             {
                 enrolledCourseInfo enrolled = thisUserInfo.allEnrolledCourses[allCourseInfo[lst_Course.SelectedIndex].id];
 
-                foreach (string id in enrolled.assignmentIDList)
+               foreach (string assignmentName in allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).totalAssignment)
                 {
-                    AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(id);
-                    cbAssignmentBox.Items.Add(assignment.name);
+                    cbAssignmentBox.Items.Add(assignmentName);
                 }
                 cbAssignmentBox.SelectedIndex = 0;
                 getAssignmentInfoList(cbAssignmentBox.SelectedIndex);
@@ -100,7 +99,7 @@ namespace CS3321_Project
                 lst_Student.Items.Add(user.name);
 
                 enrolledCourseInfo enroll = user.allEnrolledCourses[allCourseInfo[lst_Course.SelectedIndex].id];
-                AssignmentInfo assignment = allAssignments.getInfoOfAAssignment((string)enroll.assignmentIDList[index]);
+                AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).aStudentInfo[user.id].allAssignmentsOfAStudent[(string)enroll.assignmentIDList[index]];
                 lst_Assignment.Items.Add(assignment.name);
                 lst_Grade.Items.Add(assignment.grade);
 

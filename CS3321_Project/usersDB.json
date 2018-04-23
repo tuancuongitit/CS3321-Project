@@ -42,7 +42,7 @@
       "courses": {
         "CS_3306": {
           "id": "CS_3306",
-          "AssignmentID": [ "5", "6" ]
+          "AssignmentID": []
         }
       }
     }

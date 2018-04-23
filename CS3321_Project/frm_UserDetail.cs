@@ -82,7 +82,7 @@ namespace CS3321_Project
 
             foreach (string id in enrolled.assignmentIDList)
             {
-                AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(id);
+                AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(allCourseInfo[lstCoursesList.SelectedIndex].id).aStudentInfo[thisUserInfo.id].allAssignmentsOfAStudent[id];
                 lstAssignmentList.Items.Add(assignment.name);
                 lstGrade.Items.Add(assignment.grade);
             }
