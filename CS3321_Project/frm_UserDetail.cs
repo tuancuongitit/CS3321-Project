@@ -67,6 +67,9 @@ namespace CS3321_Project
 
         private void lstCoursesList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //clear everything
+            lstAssignmentList.Items.Clear();
+            lstGrade.Items.Clear();
             this.Width = 557;
             lblCourseName.Text = allCourseInfo[lstCoursesList.SelectedIndex].name;
             lblCourseID.Text = allCourseInfo[lstCoursesList.SelectedIndex].id;

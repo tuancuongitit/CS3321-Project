@@ -10,7 +10,7 @@
       "courses": {
         "AT_1301": {
           "id": "AT_1301",
-          "AssignmentID": [ "111", "222"]
+          "AssignmentID": []
         },
         "CS_3306": {
           "id": "CS_3306",
@@ -39,6 +39,20 @@
       "userType": "Professor",
       "username": "js",
       "password": "999",
+      "courses": {
+        "CS_3306": {
+          "id": "CS_3306",
+          "AssignmentID": []
+        }
+      }
+    },
+    "Admin": {
+      "id": 99999,
+      "name": "Administrator",
+      "major": "Admin",
+      "userType": "Admin",
+      "username": "Admin",
+      "password": "admin",
       "courses": {
         "CS_3306": {
           "id": "CS_3306",

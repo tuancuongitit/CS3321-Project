@@ -50,14 +50,20 @@ namespace CS3321_Project
             if (allUsers.userAuth(txtUser.Text, txtPassword.Text))
             {
                 MessageBox.Show(@"Login Successfully");
-                if (allUsers.getInfoOfAUser(txtUser.Text, false).userType.Equals("Student"))
+                var usertype = allUsers.getInfoOfAUser(txtUser.Text, false).userType;
+                if (usertype.Equals("Student"))
                 {
                     frm_UserDetail detail = new frm_UserDetail(txtUser.Text, allUsers, allCourses, allAssignments);
                     this.Hide();
                     detail.ShowDialog();
-                } else
+                } else if (usertype.Equals("Professor"))
                 {
                     frmProfessorDetail detail = new frmProfessorDetail(txtUser.Text, allUsers, allCourses, allAssignments);
+                    this.Hide();
+                    detail.ShowDialog();
+                } else if (usertype.Equals("Admin"))
+                {
+                    frm_Admin detail = new frm_Admin(txtUser.Text, allUsers, allCourses, allAssignments);
                     this.Hide();
                     detail.ShowDialog();
                 }
