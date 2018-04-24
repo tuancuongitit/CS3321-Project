@@ -18,6 +18,12 @@ namespace CS3321_Project
         {
             return allCourses[course_id];
         }
+
+        public void updateACourse(string course_ID, string student_ID, ArrayList assignmentIDList)
+        {
+            enrolledStudentInfo enroll = new enrolledStudentInfo(student_ID, assignmentIDList);
+            allCourses[course_ID].allEnrolledStudent.Add(student_ID, enroll);
+        }
     }
 
     public class CourseInfo
@@ -31,7 +37,7 @@ namespace CS3321_Project
         [JsonProperty("type")]
         public string type { get; set; }
         [JsonProperty("students")]
-        public Dictionary<string, enrolledCourseInfo> allEnrolledStudent { get; set; }
+        public Dictionary<string, enrolledStudentInfo> allEnrolledStudent { get; set; }
     }
 
     public class enrolledStudentInfo
@@ -40,5 +46,11 @@ namespace CS3321_Project
         public string id { get; set; }
         [JsonProperty("AssignmentID")]
         public ArrayList assignmentIDList { get; set; }
+
+        public enrolledStudentInfo(string student_id, ArrayList assignmentIDList)
+        {
+            this.id = student_id;
+            this.assignmentIDList = assignmentIDList;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace CS3321_Project
             arr.Add("5");
             arr.Add("6");
             allUsers.addNewUser("11111", "Louis", "lm3", "999", "Accounting", "Student", "CS_3306", arr);
-
+            allCourses.updateACourse(allCourseInfo[lst_Course.SelectedIndex].id, "11111", arr);
             string json = JsonConvert.SerializeObject(allUsers, Formatting.Indented);
             File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDB.json", json);
         }
