@@ -27,6 +27,12 @@ namespace CS3321_Project
             } else {  return false; }
         }
 
+        public void addNewUser(string id, string name, string username, string password, string major, string userType, string courseID, ArrayList assignmentID)
+        {
+            UserInfo newUser = new UserInfo(id, name, major, userType, username, password, courseID, assignmentID);
+            allUsers.Add(username, newUser);
+        }
+
         public UserInfo getInfoOfAUser(string auth, bool UsingID)
         {
             if (UsingID)
@@ -68,6 +74,22 @@ namespace CS3321_Project
         public string password { get; set; }
         [JsonProperty("courses")]
         public Dictionary<string, enrolledCourseInfo> allEnrolledCourses { get; set; }
+
+        public UserInfo() { }
+        
+        public UserInfo(string id, string name, string major, string userType, string username, string password, string courseID, ArrayList assignmentIDList)
+        {
+            this.id = id;
+            this.name = name;
+            this.major = major;
+            this.userType = userType;
+            this.username = username;
+            this.password = password;
+            this.allEnrolledCourses = new Dictionary<string, enrolledCourseInfo>();
+
+            enrolledCourseInfo newCourse = new enrolledCourseInfo(courseID, assignmentIDList);
+            allEnrolledCourses.Add(courseID, newCourse);
+        }
     }
 
     public class enrolledCourseInfo
@@ -76,5 +98,11 @@ namespace CS3321_Project
         public string id { get; set; }
         [JsonProperty("AssignmentID")]
         public ArrayList assignmentIDList { get; set; }
+
+        public enrolledCourseInfo(string id, ArrayList assignmentIDList)
+        {
+            this.id = id;
+            this.assignmentIDList = assignmentIDList;
+        }
     }
 }

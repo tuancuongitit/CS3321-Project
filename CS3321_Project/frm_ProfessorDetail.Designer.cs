@@ -38,12 +38,12 @@
             this.lblStudentID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbAssignmentBox = new System.Windows.Forms.ComboBox();
             this.lst_Grade = new System.Windows.Forms.ListBox();
             this.lst_Assignment = new System.Windows.Forms.ListBox();
             this.lst_Student = new System.Windows.Forms.ListBox();
-            this.cbAssignmentBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -172,6 +172,39 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "My Students";
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(292, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 18);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Grade";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Name";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbAssignmentBox
+            // 
+            this.cbAssignmentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAssignmentBox.FormattingEnabled = true;
+            this.cbAssignmentBox.Location = new System.Drawing.Point(164, 22);
+            this.cbAssignmentBox.Name = "cbAssignmentBox";
+            this.cbAssignmentBox.Size = new System.Drawing.Size(111, 24);
+            this.cbAssignmentBox.TabIndex = 6;
+            this.cbAssignmentBox.SelectedIndexChanged += new System.EventHandler(this.cbAssignmentBox_SelectedIndexChanged);
+            // 
             // lst_Grade
             // 
             this.lst_Grade.FormattingEnabled = true;
@@ -199,39 +232,6 @@
             this.lst_Student.Size = new System.Drawing.Size(154, 228);
             this.lst_Student.TabIndex = 3;
             this.lst_Student.SelectedIndexChanged += new System.EventHandler(this.lst_StudentList_SelectedIndexChanged);
-            // 
-            // cbAssignmentBox
-            // 
-            this.cbAssignmentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAssignmentBox.FormattingEnabled = true;
-            this.cbAssignmentBox.Location = new System.Drawing.Point(164, 22);
-            this.cbAssignmentBox.Name = "cbAssignmentBox";
-            this.cbAssignmentBox.Size = new System.Drawing.Size(111, 24);
-            this.cbAssignmentBox.TabIndex = 6;
-            this.cbAssignmentBox.SelectedIndexChanged += new System.EventHandler(this.cbAssignmentBox_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(292, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 18);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Grade";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmProfessorDetail
             // 
