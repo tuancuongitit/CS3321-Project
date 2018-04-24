@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace CS3321_Project
 {    
@@ -31,6 +32,7 @@ namespace CS3321_Project
         {
             UserInfo newUser = new UserInfo(id, name, major, userType, username, password, courseID, assignmentID);
             allUsers.Add(username, newUser);
+
         }
 
         public UserInfo getInfoOfAUser(string auth, bool UsingID)

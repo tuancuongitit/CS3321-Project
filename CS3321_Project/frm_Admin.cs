@@ -44,14 +44,10 @@ namespace CS3321_Project
             var arr = new ArrayList();
             arr.Add("5");
             arr.Add("6");
-            allUsers.addNewUser("11111", "Louis", "lm2", "999", "Accounting", "Student", "CS_3306", arr);
-            string output = JsonConvert.SerializeObject(allUsers, Formatting.Indented);
-            Console.WriteLine(output);
-            using (StreamWriter file = new StreamWriter(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDBnew.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, allUsers);
-            }
+            allUsers.addNewUser("11111", "Louis", "lm3", "999", "Accounting", "Student", "CS_3306", arr);
+
+            string json = JsonConvert.SerializeObject(allUsers, Formatting.Indented);
+            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDB.json", json);
         }
 
         private void frm_Admin_Load(object sender, EventArgs e)
