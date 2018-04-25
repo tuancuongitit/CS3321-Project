@@ -221,6 +221,7 @@
             this.lst_Grade.Size = new System.Drawing.Size(82, 228);
             this.lst_Grade.TabIndex = 5;
             this.lst_Grade.SelectedIndexChanged += new System.EventHandler(this.lst_Grade_SelectedIndexChanged);
+            this.lst_Grade.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lst_Grade_MouseDoubleClick);
             // 
             // lst_Assignment
             // 
@@ -260,7 +261,7 @@
             this.mnuOnAssignmentList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuDeleteThisAssignment});
             this.mnuOnAssignmentList.Name = "contextMenuStrip1";
-            this.mnuOnAssignmentList.Size = new System.Drawing.Size(199, 48);
+            this.mnuOnAssignmentList.Size = new System.Drawing.Size(199, 26);
             // 
             // mnuDeleteThisAssignment
             // 

@@ -37,6 +37,11 @@ namespace CS3321_Project
         {
             allAssignments[course_id].aStudentInfo.Remove(user_id);
         }
+         
+        public void deleteAProfessor(string course_id)
+        {
+            allAssignments.Remove(course_id);
+        }
 
         public void addNewCourse(string course_id)
         {
@@ -59,11 +64,17 @@ namespace CS3321_Project
             allAssignments[course_id].aStudentInfo[student_id].allAssignmentsOfAStudent.Add(assignment_id, newAssignment);
         }
 
+        public void updateAssignment(string course_id, string student_id, string assignment_id, long grade)
+        {
+            allAssignments[course_id].aStudentInfo[student_id].allAssignmentsOfAStudent[assignment_id].grade = grade;
+        }
+
         public void deleteAssignment(string course_id, string assignmentName, string assignment_id, string student_id)
         {
             allAssignments[course_id].totalAssignment.Remove(assignmentName);
             allAssignments[course_id].aStudentInfo[student_id].allAssignmentsOfAStudent.Remove(assignment_id);
         }
+        
     }
 
     public class aCourseInfo
@@ -108,7 +119,7 @@ namespace CS3321_Project
         public string name { get; set; }
         [JsonProperty("grade")]
         public long grade { get; set; }
-
+        
         public AssignmentInfo(string id, string name, long grade)
         {
             this.id = id;

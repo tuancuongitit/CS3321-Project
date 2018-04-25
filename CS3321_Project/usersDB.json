@@ -16,7 +16,8 @@
           "id": "CS_3306",
           "AssignmentID": [
             "2",
-            "206116"
+            "474763",
+            "203027"
           ]
         }
       }
@@ -33,14 +34,15 @@
           "id": "CS_3306",
           "AssignmentID": [
             "4",
-            "270217"
+            "52147",
+            "493478"
           ]
         }
       }
     },
     "js": {
       "id": "2111",
-      "name": "Jason Statham",
+      "name": "Benjamin Soibam",
       "major": "Assistant Professor",
       "userType": "Professor",
       "username": "js",
@@ -48,6 +50,10 @@
       "courses": {
         "CS_3306": {
           "id": "CS_3306",
+          "AssignmentID": []
+        },
+        "CS_3355": {
+          "id": "CS_3355",
           "AssignmentID": []
         }
       }
@@ -78,8 +84,27 @@
           "id": "CS_3306",
           "AssignmentID": [
             "65965",
-            "448381"
+            "225956",
+            "119930"
           ]
+        }
+      }
+    },
+    "lg": {
+      "id": "9190",
+      "name": "Lady Gaga",
+      "major": "Professor",
+      "userType": "Professor",
+      "username": "lg",
+      "password": "999",
+      "courses": {
+        "CS_2489": {
+          "id": "CS_2489",
+          "AssignmentID": []
+        },
+        "jklasc": {
+          "id": "jklasc",
+          "AssignmentID": []
         }
       }
     }

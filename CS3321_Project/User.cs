@@ -120,8 +120,12 @@ namespace CS3321_Project
             this.password = password;
             this.allEnrolledCourses = new Dictionary<string, enrolledCourseInfo>();
 
-            enrolledCourseInfo newCourse = new enrolledCourseInfo(courseID, assignmentIDList);
-            allEnrolledCourses.Add(courseID, newCourse);
+            if (!courseID.Equals(""))
+            {
+                enrolledCourseInfo newCourse = new enrolledCourseInfo(courseID, assignmentIDList);
+                allEnrolledCourses.Add(courseID, newCourse);
+            }
+            
         }
     }
 

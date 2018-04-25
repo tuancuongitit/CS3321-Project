@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Collections;
 using Newtonsoft.Json;
 using System.IO;
+using Microsoft.VisualBasic;
 
 namespace CS3321_Project
 {
@@ -35,22 +36,75 @@ namespace CS3321_Project
             InitializeComponent();
             lst_Student.ContextMenuStrip = mnu_OnStudentList;
             lst_Course.ContextMenuStrip = mnu_OnCourseList;
+            lst_Professor.ContextMenuStrip = mnu_OnProfessList;
             mnuAdd.Click += new EventHandler(mnuAddStudent_Click);
             mnuDelete.Click += new EventHandler(mnuDeleteStudent_Click);
             mnuAddCourse.Click += new EventHandler(mnuAddCourse_Click);
             mnuDeleteCourse.Click += new EventHandler(mnuDeleteCourse_Click);
+            mnuAddProfessor.Click += new EventHandler(mnuAddProfessor_Click);
+            mnuDeleteProfessor.Click += new EventHandler(mnuDeleteProfessor_Click);
             this.username = username;
             this.allUsers = allUsers;
             this.allCourses = allCourses;
             this.allAssignments = allAssignments;
         }
 
+        private void mnuAddProfessor_Click(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            var ipUsername = Interaction.InputBox("Enter username", "", "");
+            var generateID = rand.Next(200, 20000);
+            if (!ipUsername.Equals(""))
+            {
+                var ipPassword = Interaction.InputBox("Enter password", "", "");
+                if (!ipPassword.Equals(""))
+                {
+                    var ipName = Interaction.InputBox("Enter full name", "", "");
+                    if (!ipName.Equals(""))
+                    {
+                        var ipTitle = Interaction.InputBox("Enter title", "", "");
+                        allUsers.addNewUser(generateID.ToString(), ipName, ipUsername, ipPassword, ipTitle, "Professor", "", new ArrayList());
+                    }
+                }
+            }
+
+            updateJsonFiles();
+            LoadAllProfessors(); //reload
+        }
+
+        public void mnuDeleteProfessor_Click(object sender, EventArgs e)
+        {
+            foreach (var pair in allProfessorInfo[lst_Professor.SelectedIndex].allEnrolledCourses)
+            {
+                allAssignments.deleteAProfessor(pair.Key);
+                allCourses.deleteAProfessor(pair.Key);
+            }
+            allUsers.deleteAUser(allProfessorInfo[lst_Professor.SelectedIndex].username);
+
+            updateJsonFiles();
+            LoadAllProfessors(); //reload
+        }
+
         private void mnuAddCourse_Click(object sender, EventArgs e)
         {
-            allCourses.addNewCourse("CS_1111", "Visual Basic", "Harris Tom", "Regular");
-            allUsers.addNewCourse("CS_1111", allProfessorInfo[lst_Professor.SelectedIndex].username);
-            allAssignments.addNewCourse("CS_1111");
+            var ipCourseID = Interaction.InputBox("Enter courseID", "", "");
+            if (!ipCourseID.Equals(""))
+            {
+                var ipName = Interaction.InputBox("Enter course name", "", "");
+                if (!ipName.Equals(""))
+                {
+                    var ipType = Interaction.InputBox("Enter course type", "", "");
+                    if (!ipType.Equals(""))
+                    {
+                        allCourses.addNewCourse(ipCourseID, ipName, allProfessorInfo[lst_Professor.SelectedIndex].name, ipType);
+                        allUsers.addNewCourse(ipCourseID, allProfessorInfo[lst_Professor.SelectedIndex].username);
+                        allAssignments.addNewCourse(ipCourseID);
+                    }
+                }
+            }
+
             updateJsonFiles();
+            lst_Professor_SelectedIndexChanged(this, null);
         }
 
         private void mnuDeleteCourse_Click(object sender, EventArgs e)
@@ -59,6 +113,7 @@ namespace CS3321_Project
             allUsers.deleteACourse(allCourseInfo[lst_Course.SelectedIndex].id);
             allAssignments.deleteACourse(allCourseInfo[lst_Course.SelectedIndex].id);
             updateJsonFiles();
+            lst_Professor_SelectedIndexChanged(this, null);
         }
 
         private void mnuAddStudent_Click(object sender, EventArgs e)
@@ -67,7 +122,7 @@ namespace CS3321_Project
             var rand = new Random();
             foreach (var totalAssignment in allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).totalAssignment)
             {
-                int randomID = rand.Next(20, 500000);
+                int randomID = rand.Next(100, 10000);
                 arr.Add(randomID.ToString());
             }
 
@@ -76,7 +131,6 @@ namespace CS3321_Project
             allAssignments.updateAssignmentOfACourse(allCourseInfo[lst_Course.SelectedIndex].id, "1113", arr);
 
             updateJsonFiles();
-            lst_Course.Select();
         }
 
         private void mnuDeleteStudent_Click(object sender, EventArgs e)
@@ -100,11 +154,13 @@ namespace CS3321_Project
         private void frm_Admin_Load(object sender, EventArgs e)
         {
             LoadAllProfessors();
-            LoadAllStudents();
+            //LoadAllStudents();
         }
 
         private void LoadAllProfessors()
         {
+            allProfessorInfo.Clear();
+            lst_Professor.Items.Clear();
             foreach (var pair in allUsers.allUsers)
             {
                 if (allUsers.getTypeOfAUser(pair.Value.username).Equals("Professor"))
@@ -117,7 +173,11 @@ namespace CS3321_Project
         
         private void lst_Professor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadUserInfo(allProfessorInfo[lst_Professor.SelectedIndex].username, "Professor");
+            if (lst_Professor.SelectedIndex != -1)
+            {
+                loadUserInfo(allProfessorInfo[lst_Professor.SelectedIndex].username, "Professor");
+            }
+            
         }
 
         private void loadUserInfo(string username, string userType)
@@ -131,12 +191,6 @@ namespace CS3321_Project
                 lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
                 lblProfessorID.Text = "ID: " + user.id;
                 lblTitle.Text = user.major;
-            } else
-            {
-                lblStudentName.Text = user.name;
-                lblTotalStudentCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
-                lblStudentID.Text = "ID: " + user.id;
-                lblMajor.Text = user.major;
             }
             
             //get all enrolled courses
@@ -147,7 +201,6 @@ namespace CS3321_Project
         {
             allCourseInfo.Clear();
             lst_Course.Items.Clear();
-            lst_ManageStudentCourse.Items.Clear();
             foreach (var pair in user.allEnrolledCourses)
             {
                 var courseID = pair.Key;
@@ -158,9 +211,6 @@ namespace CS3321_Project
                 if (userType.Equals("Professor"))
                 {
                     lst_Course.Items.Add(courseName);
-                } else
-                {
-                    lst_ManageStudentCourse.Items.Add(courseName);
                 }
                 
             }
@@ -168,13 +218,16 @@ namespace CS3321_Project
 
         private void lst_Course_SelectedIndexChanged(object sender, EventArgs e)
         {
-            allStudentInfo.Clear();
-            lst_Student.Items.Clear();
-            foreach (var pair in allCourseInfo[lst_Course.SelectedIndex].allEnrolledStudent)
+            if (lst_Course.SelectedIndex != -1)
             {
-                UserInfo user = allUsers.getInfoOfAUser(pair.Key, true);
-                allStudentInfo.Add(user);
-                lst_Student.Items.Add(user.name);
+                allStudentInfo.Clear();
+                lst_Student.Items.Clear();
+                foreach (var pair in allCourseInfo[lst_Course.SelectedIndex].allEnrolledStudent)
+                {
+                    UserInfo user = allUsers.getInfoOfAUser(pair.Key, true);
+                    allStudentInfo.Add(user);
+                    lst_Student.Items.Add(user.name);
+                }
             }
         }
 
@@ -191,14 +244,14 @@ namespace CS3321_Project
                 if (allUsers.getTypeOfAUser(pair.Value.username).Equals("Student"))
                 {
                     allManageStudentInfo.Add(allUsers.allUsers[pair.Value.username]);
-                    lst_ManageStudent.Items.Add(pair.Value.name);
+                    //lst_ManageStudent.Items.Add(pair.Value.name);
                 }
             }
         }
 
         private void lst_ManageStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadUserInfo(allManageStudentInfo[lst_ManageStudent.SelectedIndex].username, "Student");
+            //loadUserInfo(allManageStudentInfo[lst_ManageStudent.SelectedIndex].username, "Student");
         }
     }
 }

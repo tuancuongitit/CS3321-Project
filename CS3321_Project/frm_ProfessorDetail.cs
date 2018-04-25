@@ -21,6 +21,7 @@ namespace CS3321_Project
         private User allUsers;
         private string username;
         private List<CourseInfo> allCourseInfo = new List<CourseInfo>();
+        private List<UserInfo> allStudentInfo = new List<UserInfo>();
         private UserInfo thisUserInfo;
 
         public frmProfessorDetail()
@@ -65,7 +66,7 @@ namespace CS3321_Project
                 allAssignments.deleteAssignment(allCourseInfo[lst_Course.SelectedIndex].id, cbAssignmentBox.SelectedItem.ToString(), allAssignments.allAssignments[allCourseInfo[lst_Course.SelectedIndex].id].aStudentInfo[stu.Key].allAssignmentsOfAStudent.ElementAt(cbAssignmentBox.SelectedIndex).Key, stu.Key);
             }
 
-            //updateJsonFiles();
+            updateJsonFiles();
         }
 
         private void updateJsonFiles()
@@ -134,7 +135,7 @@ namespace CS3321_Project
                if (allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).totalAssignment.Count > 0)
                 {
                     cbAssignmentBox.SelectedIndex = 0;
-                    getAssignmentInfoList(cbAssignmentBox.SelectedIndex);
+                    //getAssignmentInfoList(cbAssignmentBox.SelectedIndex);
                 }
             }
         }
@@ -144,9 +145,11 @@ namespace CS3321_Project
             lst_Student.Items.Clear();
             lst_Assignment.Items.Clear();
             lst_Grade.Items.Clear();
+            allStudentInfo.Clear();
             foreach (var pair in allCourseInfo[lst_Course.SelectedIndex].allEnrolledStudent)
             {
                 UserInfo user = allUsers.getInfoOfAUser(pair.Key, true);
+                allStudentInfo.Add(user);
                 lst_Student.Items.Add(user.name);
 
                 enrolledCourseInfo enroll = user.allEnrolledCourses[allCourseInfo[lst_Course.SelectedIndex].id];
@@ -172,6 +175,23 @@ namespace CS3321_Project
         {
             lst_Assignment.SelectedIndex = lst_Grade.SelectedIndex;
             lst_Student.SelectedIndex = lst_Grade.SelectedIndex;
+        }
+
+        private void lst_Grade_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var inputGrade = Interaction.InputBox("Enter grade for this assignment", "", "-1");
+
+            if (!inputGrade.Equals(""))
+            {
+                var newGrade = Convert.ToInt64(inputGrade);
+
+                if (newGrade != -1)
+                {
+                    allAssignments.updateAssignment(allCourseInfo[lst_Course.SelectedIndex].id, allStudentInfo[lst_Student.SelectedIndex].id, allAssignments.allAssignments[allCourseInfo[lst_Course.SelectedIndex].id].aStudentInfo[allStudentInfo[lst_Student.SelectedIndex].id].allAssignmentsOfAStudent.ElementAt(cbAssignmentBox.SelectedIndex).Key, newGrade);
+                    updateJsonFiles();
+                }
+            }
+
         }
     }
 }

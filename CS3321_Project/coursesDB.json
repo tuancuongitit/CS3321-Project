@@ -26,24 +26,48 @@
           "studentID": "1111",
           "AssignmentID": [
             "2",
-            "206116"
+            "474763",
+            "203027"
           ]
         },
         "1112": {
           "studentID": "1112",
           "AssignmentID": [
             "4",
-            "270217"
+            "52147",
+            "493478"
           ]
         },
         "1113": {
           "studentID": "1113",
           "AssignmentID": [
             "65965",
-            "448381"
+            "225956",
+            "119930"
           ]
         }
       }
+    },
+    "CS_3355": {
+      "course_id": "CS_3355",
+      "name": "Machine Learning",
+      "professor": "Benjamin Soibam",
+      "type": "Online",
+      "students": {}
+    },
+    "CS_2489": {
+      "course_id": "CS_2489",
+      "name": "fasjkl",
+      "professor": "Lady Gaga",
+      "type": "online",
+      "students": {}
+    },
+    "jklasc": {
+      "course_id": "jklasc",
+      "name": "ajsklc",
+      "professor": "Lady Gaga",
+      "type": "asjckl",
+      "students": {}
     }
   }
 }

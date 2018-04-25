@@ -36,6 +36,11 @@ namespace CS3321_Project
             allCourses[course_ID].allEnrolledStudent.Add(student_ID, enroll);
         }
 
+        public void deleteAProfessor(string course_id) 
+        {
+            allCourses.Remove(course_id);
+        }
+
         public void deleteAUserInACourse(string course_id, string user_id)
         {
             allCourses[course_id].allEnrolledStudent.Remove(user_id);

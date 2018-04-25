@@ -4,7 +4,8 @@
       "course_id": "CS_3306",
       "total_assignment": [
         "Quiz 2",
-        "Test 1"
+        "Final Presentation",
+        "Final Exam"
       ],
       "students": {
         "1111": {
@@ -14,9 +15,14 @@
               "name": "Quiz 2",
               "grade": 89
             },
-            "206116": {
-              "id": "206116",
-              "name": "Test 1",
+            "474763": {
+              "id": "474763",
+              "name": "Final Presentation",
+              "grade": 90
+            },
+            "203027": {
+              "id": "203027",
+              "name": "Final Exam",
               "grade": 0
             }
           }
@@ -26,12 +32,17 @@
             "4": {
               "id": "4",
               "name": "Quiz 2",
-              "grade": 76
+              "grade": 80
             },
-            "270217": {
-              "id": "270217",
-              "name": "Test 1",
-              "grade": 0
+            "52147": {
+              "id": "52147",
+              "name": "Final Presentation",
+              "grade": 78
+            },
+            "493478": {
+              "id": "493478",
+              "name": "Final Exam",
+              "grade": 70
             }
           }
         },
@@ -40,16 +51,36 @@
             "65965": {
               "id": "65965",
               "name": "Quiz 2",
-              "grade": 0
+              "grade": 88
             },
-            "448381": {
-              "id": "448381",
-              "name": "Test 1",
-              "grade": 0
+            "225956": {
+              "id": "225956",
+              "name": "Final Presentation",
+              "grade": 53
+            },
+            "119930": {
+              "id": "119930",
+              "name": "Final Exam",
+              "grade": 50
             }
           }
         }
       }
+    },
+    "CS_3355": {
+      "course_id": "CS_3355",
+      "total_assignment": [],
+      "students": {}
+    },
+    "CS_2489": {
+      "course_id": "CS_2489",
+      "total_assignment": [],
+      "students": {}
+    },
+    "jklasc": {
+      "course_id": "jklasc",
+      "total_assignment": [],
+      "students": {}
     }
   }
 }
