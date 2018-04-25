@@ -2,33 +2,50 @@
   "courses": {
     "CS_3306": {
       "course_id": "CS_3306",
-      "total_assignment": [ "Quiz 1", "Quiz 2" ],
+      "total_assignment": [
+        "Quiz 2",
+        "Test 1"
+      ],
       "students": {
         "1111": {
-          "assignmentID" : {
-            "1": {
-              "id": "1",
-              "name": "Quiz 1",
-              "grade": 95
-            },
+          "assignmentID": {
             "2": {
               "id": "2",
               "name": "Quiz 2",
               "grade": 89
+            },
+            "206116": {
+              "id": "206116",
+              "name": "Test 1",
+              "grade": 0
             }
           }
         },
         "1112": {
-          "assignmentID" : {
-            "3": {
-              "id": "3",
-              "name": "Quiz 1",
-              "grade": 65
-            },
+          "assignmentID": {
             "4": {
               "id": "4",
               "name": "Quiz 2",
               "grade": 76
+            },
+            "270217": {
+              "id": "270217",
+              "name": "Test 1",
+              "grade": 0
+            }
+          }
+        },
+        "1113": {
+          "assignmentID": {
+            "65965": {
+              "id": "65965",
+              "name": "Quiz 2",
+              "grade": 0
+            },
+            "448381": {
+              "id": "448381",
+              "name": "Test 1",
+              "grade": 0
             }
           }
         }

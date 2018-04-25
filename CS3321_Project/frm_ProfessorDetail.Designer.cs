@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lst_Course = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,9 +45,15 @@
             this.lst_Grade = new System.Windows.Forms.ListBox();
             this.lst_Assignment = new System.Windows.Forms.ListBox();
             this.lst_Student = new System.Windows.Forms.ListBox();
+            this.mnuOnCourseList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuAddAssignment = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuOnAssignmentList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuDeleteThisAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.mnuOnCourseList.SuspendLayout();
+            this.mnuOnAssignmentList.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -213,6 +220,7 @@
             this.lst_Grade.Name = "lst_Grade";
             this.lst_Grade.Size = new System.Drawing.Size(82, 228);
             this.lst_Grade.TabIndex = 5;
+            this.lst_Grade.SelectedIndexChanged += new System.EventHandler(this.lst_Grade_SelectedIndexChanged);
             // 
             // lst_Assignment
             // 
@@ -222,6 +230,7 @@
             this.lst_Assignment.Name = "lst_Assignment";
             this.lst_Assignment.Size = new System.Drawing.Size(111, 228);
             this.lst_Assignment.TabIndex = 4;
+            this.lst_Assignment.SelectedIndexChanged += new System.EventHandler(this.lst_Assignment_SelectedIndexChanged);
             // 
             // lst_Student
             // 
@@ -232,6 +241,32 @@
             this.lst_Student.Size = new System.Drawing.Size(154, 228);
             this.lst_Student.TabIndex = 3;
             this.lst_Student.SelectedIndexChanged += new System.EventHandler(this.lst_StudentList_SelectedIndexChanged);
+            // 
+            // mnuOnCourseList
+            // 
+            this.mnuOnCourseList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuAddAssignment});
+            this.mnuOnCourseList.Name = "mnuOnCourseList";
+            this.mnuOnCourseList.Size = new System.Drawing.Size(163, 26);
+            // 
+            // mnuAddAssignment
+            // 
+            this.mnuAddAssignment.Name = "mnuAddAssignment";
+            this.mnuAddAssignment.Size = new System.Drawing.Size(162, 22);
+            this.mnuAddAssignment.Text = "Add Assignment";
+            // 
+            // mnuOnAssignmentList
+            // 
+            this.mnuOnAssignmentList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDeleteThisAssignment});
+            this.mnuOnAssignmentList.Name = "contextMenuStrip1";
+            this.mnuOnAssignmentList.Size = new System.Drawing.Size(199, 48);
+            // 
+            // mnuDeleteThisAssignment
+            // 
+            this.mnuDeleteThisAssignment.Name = "mnuDeleteThisAssignment";
+            this.mnuDeleteThisAssignment.Size = new System.Drawing.Size(198, 22);
+            this.mnuDeleteThisAssignment.Text = "Delete This Assignment";
             // 
             // frmProfessorDetail
             // 
@@ -253,6 +288,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.mnuOnCourseList.ResumeLayout(false);
+            this.mnuOnAssignmentList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -275,5 +312,9 @@
         private System.Windows.Forms.ComboBox cbAssignmentBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip mnuOnCourseList;
+        private System.Windows.Forms.ToolStripMenuItem mnuAddAssignment;
+        private System.Windows.Forms.ContextMenuStrip mnuOnAssignmentList;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteThisAssignment;
     }
 }

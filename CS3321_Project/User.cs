@@ -28,11 +28,42 @@ namespace CS3321_Project
             } else {  return false; }
         }
 
+        public void addNewCourse (string course_id, string username)
+        {
+            enrolledCourseInfo aNewCourseInfo = new enrolledCourseInfo(course_id);
+            allUsers[username].allEnrolledCourses.Add(course_id, aNewCourseInfo);
+        }
+
+        public void deleteACourse(string course_id)
+        {
+            foreach (var pair in allUsers)
+            {
+                if (pair.Value.allEnrolledCourses.ContainsKey(course_id))
+                {
+                    pair.Value.allEnrolledCourses.Remove(course_id);
+                }
+            }
+        }
+
         public void addNewUser(string id, string name, string username, string password, string major, string userType, string courseID, ArrayList assignmentID)
         {
             UserInfo newUser = new UserInfo(id, name, major, userType, username, password, courseID, assignmentID);
             allUsers.Add(username, newUser);
+        }
 
+        public void deleteAUser(string name) //using name for now
+        {
+            allUsers.Remove(name);
+        }
+
+        public void addNewAssignment(string username, string course_id, string assignment_id)
+        {
+            allUsers[username].allEnrolledCourses[course_id].assignmentIDList.Add(assignment_id);
+        }
+
+        public void deleteAssignment(string username, string course_id, string assignment_id)
+        {
+            allUsers[username].allEnrolledCourses[course_id].assignmentIDList.Remove(assignment_id);
         }
 
         public UserInfo getInfoOfAUser(string auth, bool UsingID)
@@ -100,6 +131,13 @@ namespace CS3321_Project
         public string id { get; set; }
         [JsonProperty("AssignmentID")]
         public ArrayList assignmentIDList { get; set; }
+
+        public enrolledCourseInfo() { }
+
+        public enrolledCourseInfo(string id) {
+            this.id = id;
+            this.assignmentIDList = new ArrayList();
+        }
 
         public enrolledCourseInfo(string id, ArrayList assignmentIDList)
         {
