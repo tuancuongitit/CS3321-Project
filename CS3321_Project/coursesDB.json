@@ -38,12 +38,20 @@
             "493478"
           ]
         },
-        "1113": {
-          "studentID": "1113",
+        "4199": {
+          "studentID": "4199",
           "AssignmentID": [
-            "65965",
-            "225956",
-            "119930"
+            "8436",
+            "3074",
+            "4379"
+          ]
+        },
+        "3819": {
+          "studentID": "3819",
+          "AssignmentID": [
+            "7758",
+            "3667",
+            "9861"
           ]
         }
       }
@@ -53,21 +61,32 @@
       "name": "Machine Learning",
       "professor": "Benjamin Soibam",
       "type": "Online",
-      "students": {}
+      "students": {
+        "1112": {
+          "studentID": "1112",
+          "AssignmentID": [
+            "218833"
+          ]
+        },
+        "4199": {
+          "studentID": "4199",
+          "AssignmentID": [
+            "8354"
+          ]
+        }
+      }
     },
     "CS_2489": {
       "course_id": "CS_2489",
-      "name": "fasjkl",
-      "professor": "Lady Gaga",
-      "type": "online",
-      "students": {}
-    },
-    "jklasc": {
-      "course_id": "jklasc",
-      "name": "ajsklc",
-      "professor": "Lady Gaga",
-      "type": "asjckl",
-      "students": {}
+      "name": "Visual Basic",
+      "professor": "Thomas Jeff",
+      "type": "Regular",
+      "students": {
+        "4199": {
+          "studentID": "4199",
+          "AssignmentID": []
+        }
+      }
     }
   }
 }

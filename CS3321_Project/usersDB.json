@@ -37,6 +37,12 @@
             "52147",
             "493478"
           ]
+        },
+        "CS_3355": {
+          "id": "CS_3355",
+          "AssignmentID": [
+            "218833"
+          ]
         }
       }
     },
@@ -72,10 +78,52 @@
         }
       }
     },
+    "tm": {
+      "id": "959",
+      "name": "Thomas Jeff",
+      "major": "Professor",
+      "userType": "Professor",
+      "username": "tm",
+      "password": "999",
+      "courses": {
+        "CS_2489": {
+          "id": "CS_2489",
+          "AssignmentID": []
+        }
+      }
+    },
+    "cpp": {
+      "id": "4199",
+      "name": "Cuong Pham",
+      "major": "Computer Science",
+      "userType": "Student",
+      "username": "cpp",
+      "password": "999",
+      "courses": {
+        "CS_3355": {
+          "id": "CS_3355",
+          "AssignmentID": [
+            "8354"
+          ]
+        },
+        "CS_3306": {
+          "id": "CS_3306",
+          "AssignmentID": [
+            "8436",
+            "3074",
+            "4379"
+          ]
+        },
+        "CS_2489": {
+          "id": "CS_2489",
+          "AssignmentID": []
+        }
+      }
+    },
     "kv": {
-      "id": "1113",
+      "id": "3819",
       "name": "Kevin",
-      "major": "Accounting",
+      "major": "Computer Science",
       "userType": "Student",
       "username": "kv",
       "password": "999",
@@ -83,28 +131,10 @@
         "CS_3306": {
           "id": "CS_3306",
           "AssignmentID": [
-            "65965",
-            "225956",
-            "119930"
+            "7758",
+            "3667",
+            "9861"
           ]
-        }
-      }
-    },
-    "lg": {
-      "id": "9190",
-      "name": "Lady Gaga",
-      "major": "Professor",
-      "userType": "Professor",
-      "username": "lg",
-      "password": "999",
-      "courses": {
-        "CS_2489": {
-          "id": "CS_2489",
-          "AssignmentID": []
-        },
-        "jklasc": {
-          "id": "jklasc",
-          "AssignmentID": []
         }
       }
     }

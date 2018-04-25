@@ -119,6 +119,7 @@
             this.lst_Student.Name = "lst_Student";
             this.lst_Student.Size = new System.Drawing.Size(163, 260);
             this.lst_Student.TabIndex = 3;
+            this.lst_Student.SelectedIndexChanged += new System.EventHandler(this.lst_Student_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -282,6 +283,7 @@
             this.Name = "frm_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Admin_FormClosing);
             this.Load += new System.EventHandler(this.frm_Admin_Load);
             this.mnu_OnCourseList.ResumeLayout(false);
             this.mnu_OnStudentList.ResumeLayout(false);

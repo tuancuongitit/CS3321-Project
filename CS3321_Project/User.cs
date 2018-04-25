@@ -45,6 +45,12 @@ namespace CS3321_Project
             }
         }
 
+        public void addAnExistingUsertoACourse(string course_id, string student_id, ArrayList assignmentIDList)
+        {
+            enrolledCourseInfo enroll = new enrolledCourseInfo(course_id, assignmentIDList);
+            allUsers[getInfoOfAUser(student_id, true).username].allEnrolledCourses.Add(course_id, enroll);
+        }
+
         public void addNewUser(string id, string name, string username, string password, string major, string userType, string courseID, ArrayList assignmentID)
         {
             UserInfo newUser = new UserInfo(id, name, major, userType, username, password, courseID, assignmentID);

@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lstGrade = new System.Windows.Forms.ListBox();
             this.lstAssignmentList = new System.Windows.Forms.ListBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -170,6 +171,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.lstCoursesList);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 137);
@@ -185,7 +187,7 @@
             this.lstCoursesList.ItemHeight = 16;
             this.lstCoursesList.Location = new System.Drawing.Point(11, 21);
             this.lstCoursesList.Name = "lstCoursesList";
-            this.lstCoursesList.Size = new System.Drawing.Size(220, 148);
+            this.lstCoursesList.Size = new System.Drawing.Size(220, 132);
             this.lstCoursesList.TabIndex = 3;
             this.lstCoursesList.SelectedIndexChanged += new System.EventHandler(this.lstCoursesList_SelectedIndexChanged);
             // 
@@ -330,6 +332,16 @@
             this.lstAssignmentList.TabIndex = 3;
             this.lstAssignmentList.SelectedIndexChanged += new System.EventHandler(this.lstAssignmentList_SelectedIndexChanged);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(11, 154);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(220, 23);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frm_UserDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -345,6 +357,7 @@
             this.Name = "frm_UserDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Information";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_UserDetail_FormClosing);
             this.Load += new System.EventHandler(this.frm_UserDetail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -380,5 +393,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstGrade;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

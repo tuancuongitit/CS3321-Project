@@ -55,6 +55,7 @@ namespace CS3321_Project
             }
 
             updateJsonFiles();
+            lst_Course_SelectedIndexChanged(this, null);
         }
 
         private void mnuDeleteAssignment_Click(object sender, EventArgs e)
@@ -67,16 +68,20 @@ namespace CS3321_Project
             }
 
             updateJsonFiles();
+            lst_Course_SelectedIndexChanged(this, null);
         }
 
         private void updateJsonFiles()
         {
             string json = JsonConvert.SerializeObject(allUsers, Formatting.Indented);
-            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDB.json", json);
+            //File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDB.json", json);
+            File.WriteAllText("usersDB.json", json);
             json = JsonConvert.SerializeObject(allCourses, Formatting.Indented);
-            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\coursesDB.json", json);
+            //File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\coursesDB.json", json);
+            File.WriteAllText("coursesDB.json", json);
             json = JsonConvert.SerializeObject(allAssignments, Formatting.Indented);
-            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\assignmentDB.json", json);
+            //File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\assignmentDB.json", json);
+            File.WriteAllText("assignmentDB.json", json);
         }
 
         private void frmProfessorDetail_Load(object sender, EventArgs e)
@@ -91,7 +96,16 @@ namespace CS3321_Project
             thisUserInfo = user;
             lblName.Text = user.name;
             lblStudentID.Text = "ID: " + user.id;
-            lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
+            lblStudentID.Text = "ID: " + user.id;
+            if (user.allEnrolledCourses.Count > 1)
+            {
+                lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
+            }
+            else
+            {
+                lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " course";
+            }
+            
             lblTitle.Text = user.major;
             //get all enrolled courses
             loadEnrolledCourses(user);
@@ -99,6 +113,8 @@ namespace CS3321_Project
 
         private void loadEnrolledCourses(UserInfo user)
         {
+            allCourseInfo.Clear();
+            lst_Course.Items.Clear();
             foreach (var pair in user.allEnrolledCourses)
             {
                 var courseID = pair.Key;
@@ -123,6 +139,11 @@ namespace CS3321_Project
         private void lst_Course_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbAssignmentBox.Items.Clear();
+            lst_Student.Items.Clear();
+            lst_Assignment.Items.Clear();
+            lst_Grade.Items.Clear();
+            allStudentInfo.Clear();
+            
             if (lst_Course.SelectedIndex != -1)
             {
                 enrolledCourseInfo enrolled = thisUserInfo.allEnrolledCourses[allCourseInfo[lst_Course.SelectedIndex].id];
@@ -135,7 +156,9 @@ namespace CS3321_Project
                if (allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).totalAssignment.Count > 0)
                 {
                     cbAssignmentBox.SelectedIndex = 0;
-                    //getAssignmentInfoList(cbAssignmentBox.SelectedIndex);
+                } else
+                {
+                    getAssignmentInfoList(-1);
                 }
             }
         }
@@ -152,10 +175,13 @@ namespace CS3321_Project
                 allStudentInfo.Add(user);
                 lst_Student.Items.Add(user.name);
 
-                enrolledCourseInfo enroll = user.allEnrolledCourses[allCourseInfo[lst_Course.SelectedIndex].id];
-                AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).aStudentInfo[user.id].allAssignmentsOfAStudent[(string)enroll.assignmentIDList[index]];
-                lst_Assignment.Items.Add(assignment.name);
-                lst_Grade.Items.Add(assignment.grade);
+                if (index != -1)
+                {
+                    enrolledCourseInfo enroll = user.allEnrolledCourses[allCourseInfo[lst_Course.SelectedIndex].id];
+                    AssignmentInfo assignment = allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).aStudentInfo[user.id].allAssignmentsOfAStudent[(string)enroll.assignmentIDList[index]];
+                    lst_Assignment.Items.Add(assignment.name);
+                    lst_Grade.Items.Add(assignment.grade);
+                }
 
             }
         }
@@ -192,6 +218,17 @@ namespace CS3321_Project
                 }
             }
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            var json = File.ReadAllText("usersDB.json");
+            allUsers = JsonConvert.DeserializeObject<User>(json);
+            json = File.ReadAllText("coursesDB.json");
+            allCourses = JsonConvert.DeserializeObject<Course>(json);
+            json = File.ReadAllText("assignmentDB.json");
+            allAssignments = JsonConvert.DeserializeObject<Assignment>(json);
+            loadUserInfo();
         }
     }
 }

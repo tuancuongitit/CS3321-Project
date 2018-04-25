@@ -49,6 +49,7 @@
             this.mnuAddAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOnAssignmentList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuDeleteThisAssignment = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.lst_Course);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 118);
@@ -73,7 +75,7 @@
             this.lst_Course.ItemHeight = 16;
             this.lst_Course.Location = new System.Drawing.Point(11, 21);
             this.lst_Course.Name = "lst_Course";
-            this.lst_Course.Size = new System.Drawing.Size(220, 148);
+            this.lst_Course.Size = new System.Drawing.Size(220, 132);
             this.lst_Course.TabIndex = 3;
             this.lst_Course.SelectedIndexChanged += new System.EventHandler(this.lst_Course_SelectedIndexChanged);
             // 
@@ -269,6 +271,16 @@
             this.mnuDeleteThisAssignment.Size = new System.Drawing.Size(198, 22);
             this.mnuDeleteThisAssignment.Text = "Delete This Assignment";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(11, 154);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(220, 23);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmProfessorDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -317,5 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAddAssignment;
         private System.Windows.Forms.ContextMenuStrip mnuOnAssignmentList;
         private System.Windows.Forms.ToolStripMenuItem mnuDeleteThisAssignment;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

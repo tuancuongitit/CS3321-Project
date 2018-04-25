@@ -46,22 +46,41 @@
             }
           }
         },
-        "1113": {
+        "4199": {
           "assignmentID": {
-            "65965": {
-              "id": "65965",
+            "8436": {
+              "id": "8436",
               "name": "Quiz 2",
-              "grade": 88
+              "grade": 0
             },
-            "225956": {
-              "id": "225956",
+            "3074": {
+              "id": "3074",
               "name": "Final Presentation",
-              "grade": 53
+              "grade": 0
             },
-            "119930": {
-              "id": "119930",
+            "4379": {
+              "id": "4379",
               "name": "Final Exam",
-              "grade": 50
+              "grade": 0
+            }
+          }
+        },
+        "3819": {
+          "assignmentID": {
+            "7758": {
+              "id": "7758",
+              "name": "Quiz 2",
+              "grade": 0
+            },
+            "3667": {
+              "id": "3667",
+              "name": "Final Presentation",
+              "grade": 0
+            },
+            "9861": {
+              "id": "9861",
+              "name": "Final Exam",
+              "grade": 0
             }
           }
         }
@@ -69,18 +88,38 @@
     },
     "CS_3355": {
       "course_id": "CS_3355",
-      "total_assignment": [],
-      "students": {}
+      "total_assignment": [
+        "Quiz 1"
+      ],
+      "students": {
+        "1112": {
+          "assignmentID": {
+            "218833": {
+              "id": "218833",
+              "name": "Quiz 1",
+              "grade": 0
+            }
+          }
+        },
+        "4199": {
+          "assignmentID": {
+            "8354": {
+              "id": "8354",
+              "name": "Quiz 1",
+              "grade": 0
+            }
+          }
+        }
+      }
     },
     "CS_2489": {
       "course_id": "CS_2489",
       "total_assignment": [],
-      "students": {}
-    },
-    "jklasc": {
-      "course_id": "jklasc",
-      "total_assignment": [],
-      "students": {}
+      "students": {
+        "4199": {
+          "assignmentID": {}
+        }
+      }
     }
   }
 }

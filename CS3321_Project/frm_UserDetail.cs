@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace CS3321_Project
 {
@@ -47,7 +49,13 @@ namespace CS3321_Project
             thisUserInfo = user;
             lblName.Text = user.name;
             lblStudentID.Text = "ID: " + user.id;
-            lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
+            if (user.allEnrolledCourses.Count > 1)
+            {
+                lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
+            } else
+            {
+                lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " course";
+            }
             lblMajor.Text = user.major;
             //get all enrolled courses
             loadEnrolledCourses(user);
@@ -55,6 +63,8 @@ namespace CS3321_Project
 
         private void loadEnrolledCourses(UserInfo user)
         {
+            allCourseInfo.Clear();
+            lstCoursesList.Items.Clear();
             foreach (var pair in user.allEnrolledCourses)
             {
                 var courseID = pair.Key;
@@ -99,6 +109,22 @@ namespace CS3321_Project
         private void lstGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             lstAssignmentList.SelectedIndex = lstGrade.SelectedIndex;
+        }
+
+        private void frm_UserDetail_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            var json = File.ReadAllText("usersDB.json");
+            allUsers = JsonConvert.DeserializeObject<User>(json);
+            json = File.ReadAllText("coursesDB.json");
+            allCourses = JsonConvert.DeserializeObject<Course>(json);
+            json = File.ReadAllText("assignmentDB.json");
+            allAssignments = JsonConvert.DeserializeObject<Assignment>(json);
+            loadUserInfo();
         }
     }
 }

@@ -118,6 +118,54 @@ namespace CS3321_Project
 
         private void mnuAddStudent_Click(object sender, EventArgs e)
         {
+            switch (MessageBox.Show("Do you want to add an existing student to this course?",
+              "",
+              MessageBoxButtons.YesNoCancel,
+              MessageBoxIcon.Question))
+            {
+                case DialogResult.Yes:
+                    List<string> arrAllStudent = new List<string>();
+                    string displayName = "";
+                    foreach (var pair in allUsers.allUsers)
+                    {
+                        if (pair.Value.userType.Equals("Student"))
+                        {
+                            arrAllStudent.Add(pair.Value.id);
+                            displayName += "\n" + pair.Value.name + " (id: " + pair.Value.id + ")";
+                        }
+                    }
+                    
+                    var ipStudentID = Interaction.InputBox("List of exising students: \n" + displayName + "\n\nPlease choose a student ID to add", "", "");
+
+                    if (!ipStudentID.Equals(""))
+                    {
+                        var arr = new ArrayList();
+                        var rand = new Random();
+                        foreach (var totalAssignment in allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).totalAssignment)
+                        {
+                            int randomID = rand.Next(100, 10000);
+                            arr.Add(randomID.ToString());
+                        }
+                        allUsers.addAnExistingUsertoACourse(allCourseInfo[lst_Course.SelectedIndex].id, ipStudentID, arr);
+                        allCourses.updateACourse(allCourseInfo[lst_Course.SelectedIndex].id, ipStudentID, arr);
+                        allAssignments.updateAssignmentOfACourse(allCourseInfo[lst_Course.SelectedIndex].id, ipStudentID, arr);
+                        updateJsonFiles();
+                        lst_Course_SelectedIndexChanged(this, null);
+                    }
+                    break;
+
+                case DialogResult.No:
+                    addNewStudent();
+                    break;
+
+                case DialogResult.Cancel:
+                    // "Cancel" processing
+                    break;
+            }       
+        }
+
+        private void addNewStudent()
+        {
             var arr = new ArrayList();
             var rand = new Random();
             foreach (var totalAssignment in allAssignments.getInfoOfAAssignment(allCourseInfo[lst_Course.SelectedIndex].id).totalAssignment)
@@ -126,11 +174,29 @@ namespace CS3321_Project
                 arr.Add(randomID.ToString());
             }
 
-            allUsers.addNewUser("1113", "Kevin", "kv", "999", "Accounting", "Student", "CS_3306", arr);
-            allCourses.updateACourse(allCourseInfo[lst_Course.SelectedIndex].id, "1113", arr);
-            allAssignments.updateAssignmentOfACourse(allCourseInfo[lst_Course.SelectedIndex].id, "1113", arr);
+            var ipUsername = Interaction.InputBox("Enter username", "", "");
+            if (!ipUsername.Equals(""))
+            {
+                var ipPass = Interaction.InputBox("Enter password", "", "");
+                if (!ipPass.Equals(""))
+                {
+                    var ipName = Interaction.InputBox("Enter name", "", "");
+                    if (!ipName.Equals(""))
+                    {
+                        var ipMajor = Interaction.InputBox("Enter major", "", "");
+                        if (!ipMajor.Equals(""))
+                        {
+                            var generateID = rand.Next(1000, 10000).ToString();
+                            allUsers.addNewUser(generateID, ipName, ipUsername, ipPass, ipMajor, "Student", allCourseInfo[lst_Course.SelectedIndex].id, arr);
+                            allCourses.updateACourse(allCourseInfo[lst_Course.SelectedIndex].id, generateID, arr);
+                            allAssignments.updateAssignmentOfACourse(allCourseInfo[lst_Course.SelectedIndex].id, generateID, arr);
+                        }
+                    }
+                }
+            }
 
             updateJsonFiles();
+            lst_Course_SelectedIndexChanged(this, null);
         }
 
         private void mnuDeleteStudent_Click(object sender, EventArgs e)
@@ -139,16 +205,20 @@ namespace CS3321_Project
             allCourses.deleteAUserInACourse(allCourseInfo[lst_Course.SelectedIndex].id, allStudentInfo[lst_Student.SelectedIndex].id);
             allAssignments.deleteAUser(allCourseInfo[lst_Course.SelectedIndex].id, allStudentInfo[lst_Student.SelectedIndex].id);
             updateJsonFiles();
+            lst_Course_SelectedIndexChanged(this, null);
         }
 
         private void updateJsonFiles()
         {
             string json = JsonConvert.SerializeObject(allUsers, Formatting.Indented);
-            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDB.json", json);
+            //File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\usersDB.json", json);
+            File.WriteAllText("usersDB.json", json);
             json = JsonConvert.SerializeObject(allCourses, Formatting.Indented);
-            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\coursesDB.json", json);
+            //File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\coursesDB.json", json);
+            File.WriteAllText("coursesDB.json", json);
             json = JsonConvert.SerializeObject(allAssignments, Formatting.Indented);
-            File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\assignmentDB.json", json);
+            //File.WriteAllText(@"\\Mac\Home\Desktop\OneDrive\University\Active Spring 2018\CS 3321 Software Engineering\Project\ForkSource\CS3321_Project\assignmentDB.json", json);
+            File.WriteAllText("assignmentDB.json", json);
         }
 
         private void frm_Admin_Load(object sender, EventArgs e)
@@ -188,7 +258,14 @@ namespace CS3321_Project
             if (userType.Equals("Professor"))
             {
                 lblName.Text = user.name;
-                lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
+                if (user.allEnrolledCourses.Count > 1)
+                {
+                    lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " courses";
+                }
+                else
+                {
+                    lblTotalCourses.Text = user.allEnrolledCourses.Count.ToString() + " course";
+                }
                 lblProfessorID.Text = "ID: " + user.id;
                 lblTitle.Text = user.major;
             }
@@ -252,6 +329,16 @@ namespace CS3321_Project
         private void lst_ManageStudent_SelectedIndexChanged(object sender, EventArgs e)
         {
             //loadUserInfo(allManageStudentInfo[lst_ManageStudent.SelectedIndex].username, "Student");
+        }
+
+        private void frm_Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void lst_Student_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
